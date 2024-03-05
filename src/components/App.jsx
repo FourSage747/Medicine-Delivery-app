@@ -1,16 +1,17 @@
+import { Route, Routes } from "react-router";
+import { Layout } from "./Layout";
+import { Shop } from "./Shop";
+import { ShoppingCart } from "./ShoppingCart";
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Shop />} />
+          <Route path="ShoppingCart" element={<ShoppingCart />} />
+        </Route>
+      </Routes>
     </div>
   );
 };
